@@ -1,4 +1,15 @@
-def is_prime(num):
+def is_prime(num: int) -> bool:
+    """
+    Check if a number is prime.
+    
+    This function checks if a given number is prime by applying basic prime number rules.
+    
+    Parameters:
+    num (int): The number to check for primality.
+    
+    Returns:
+    bool: True if the number is prime, False otherwise.
+    """
     if num <= 1:
         return False
     if num <= 3:
@@ -12,7 +23,18 @@ def is_prime(num):
         i += 6
     return True
 
-def filter_prime_numbers(numbers):
+def filter_prime_numbers(numbers: list) -> list:
+    """
+    Filter prime numbers from a list of numbers.
+    
+    This function takes a list of numbers and filters out the prime numbers from it.
+    
+    Parameters:
+    numbers (list): A list of numbers to be filtered.
+    
+    Returns:
+    list: A list containing the prime numbers from the input list.
+    """
     prime_numbers = filter(is_prime, numbers)
     return list(prime_numbers)
 

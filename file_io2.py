@@ -1,12 +1,29 @@
 import json
+from typing import Dict, Any, List
 
-def add_to_json(filename, new_data):
+def add_to_json(filename: str, new_data: Dict[str, Any]) -> None:
+    """
+    Add new data to an existing JSON file.
+    
+    This function reads the existing JSON data from the specified file,
+    appends the new data to it, and then writes the updated data back to the file.
+    
+    Parameters:
+    filename (str): The name of the JSON file to which data will be added.
+    new_data (dict): The new data to be added, represented as a dictionary.
+    
+    Returns:
+    None
+    """
     try:
+        # Read the existing JSON data from the file
         with open(filename, 'r') as file:
             existing_data = json.load(file)
         
+        # Append the new data to the existing data
         existing_data.append(new_data)
         
+        # Write the updated data back to the file
         with open(filename, 'w') as file:
             json.dump(existing_data, file, indent=4)
             
@@ -21,4 +38,5 @@ new_data = {
     "age": 28
 }
 
+# Call the function to add new data to the JSON file
 add_to_json(filename, new_data)

@@ -1,4 +1,17 @@
-def sum_of_numbers(*args):
+from typing import Union
+
+def sum_of_numbers(*args: Union[int, float]) -> Union[int, float]:
+    """
+    Calculate the sum of a variable number of input numbers.
+    
+    This function takes any number of numeric arguments and returns their sum.
+    
+    Parameters:
+    *args (numeric): Any number of numeric arguments to be summed.
+    
+    Returns:
+    Union[int, float]: The sum of the input numeric arguments.
+    """
     return sum(args)
 
 # Testing the function

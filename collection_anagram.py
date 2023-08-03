@@ -16,9 +16,23 @@
 # print(anagram_groups)
 
 
-from collections import defaultdict
 
-def group_anagrams(strs):
+from collections import defaultdict
+from typing import List
+
+def group_anagrams(strs: List[str]) -> List[List[str]]:
+    """
+    Group a list of words into anagrams.
+    
+    This function takes a list of words and groups them into lists of anagrams.
+    Words are considered anagrams if they have the same letters, regardless of order.
+    
+    Parameters:
+    strs (List[str]): A list of words to group into anagrams.
+    
+    Returns:
+    List[List[str]]: A list of lists, each containing words that are anagrams of each other.
+    """
     anagram_groups = defaultdict(list)
     
     for word in strs:
@@ -31,4 +45,5 @@ def group_anagrams(strs):
 input_strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
 result = group_anagrams(input_strs)
 print(result)
+
 
