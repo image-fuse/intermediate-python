@@ -1,4 +1,11 @@
+"""
+This script defines the BankAccount and Customer classes to represent bank accounts and customers.
+"""
+
 class BankAccount:
+    """
+    A class representing a bank account.
+    """
     def __init__(self, account_number: str, balance: float, account_type: str):
         """
         Initialize a BankAccount object.
@@ -14,7 +21,7 @@ class BankAccount:
         self.account_number = account_number
         self.balance = balance
         self.account_type = account_type
-        
+
     def __del__(self):
         """
         Destructor for the BankAccount class.
@@ -26,7 +33,11 @@ class BankAccount:
 
 
 class Customer:
-    def __init__(self, name: str, age: int, address: str, account_number: str, balance: float, account_type: str):
+    """
+    A class representing a customer.
+    """
+    def __init__(self, name: str, age: int, address: str,
+                 account_number: str, balance: float, account_type: str):
         """
         Initialize a Customer object.
 
@@ -45,7 +56,7 @@ class Customer:
         self.age = age
         self.address = address
         self.bank_account = BankAccount(account_number, balance, account_type)
-        
+
     def __del__(self):
         """
         Destructor for the Customer class.
@@ -57,28 +68,28 @@ class Customer:
 
 
 # Creating instances
-customer1 = Customer("Sita", 30, "Sankhamul", "123456789", 50000.0, "Savings")
-customer2 = Customer("Ram", 25, "Sanepa", "987654321", 80000.0, "Checking")
+CUSTOMER1 = Customer("Sita", 30, "Sankhamul", "123456789", 50000.0, "Savings")
+CUSTOMER2 = Customer("Ram", 25, "Sanepa", "987654321", 80000.0, "Checking")
 
 # Displaying customer and account information
 print("Customer 1:")
-print(f"Name: {customer1.name}")
-print(f"Age: {customer1.age}")
-print(f"Address: {customer1.address}")
-print(f"Account Number: {customer1.bank_account.account_number}")
-print(f"Account Balance: {customer1.bank_account.balance}")
-print(f"Account Type: {customer1.bank_account.account_type}")
+print(f"Name: {CUSTOMER1.name}")
+print(f"Age: {CUSTOMER1.age}")
+print(f"Address: {CUSTOMER1.address}")
+print(f"Account Number: {CUSTOMER1.bank_account.account_number}")
+print(f"Account Balance: {CUSTOMER1.bank_account.balance}")
+print(f"Account Type: {CUSTOMER1.bank_account.account_type}")
 print("\n")
 
 print("Customer 2:")
-print(f"Name: {customer2.name}")
-print(f"Age: {customer2.age}")
-print(f"Address: {customer2.address}")
-print(f"Account Number: {customer2.bank_account.account_number}")
-print(f"Account Balance: {customer2.bank_account.balance}")
-print(f"Account Type: {customer2.bank_account.account_type}")
+print(f"Name: {CUSTOMER2.name}")
+print(f"Age: {CUSTOMER2.age}")
+print(f"Address: {CUSTOMER2.address}")
+print(f"Account Number: {CUSTOMER2.bank_account.account_number}")
+print(f"Account Balance: {CUSTOMER2.bank_account.balance}")
+print(f"Account Type: {CUSTOMER2.bank_account.account_type}")
 print("\n")
 
 # Deleting instances
-del customer1
-del customer2
+del CUSTOMER1
+del CUSTOMER2

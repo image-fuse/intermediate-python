@@ -1,4 +1,11 @@
+"""
+This script defines the University and Department classes to represent 
+universities and their departments.
+"""
 class University:
+    """
+    A class representing a university.
+    """
     def __init__(self, name: str, location: str):
         """
         Initialize a University object.
@@ -44,7 +51,11 @@ class University:
 
 
 class Department(University):
-    def __init__(self, university_name: str, university_location: str, department_name: str, head_of_department: str):
+    """
+    A class representing a department within a university.
+    """
+    def __init__(self, university_name: str, university_location: str,
+                 department_name: str, head_of_department: str):
         """
         Initialize a Department object.
 
@@ -93,7 +104,8 @@ class Department(University):
 
 # Creating instances
 university = University("Tribhuvan University", "Kathmandu")
-department = Department("Tribhuvan University", "Kathmandu", "Computer Science", "Dr. Bal Krishna Bal")
+department = Department("Tribhuvan University", "Kathmandu",
+                        "Computer Science", "Dr. Bal Krishna Bal")
 
 # Adding departments and courses
 university.add_department(department)
